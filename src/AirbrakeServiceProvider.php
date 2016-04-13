@@ -46,6 +46,12 @@ class AirbrakeServiceProvider extends ServiceProvider
 
             return $airbrake;
         });
+
+        $handler = $this->app->make('Illuminate\Contracts\Debug\ExceptionHandler');
+        $this->app->instance(
+            'Illuminate\Contracts\Debug\ExceptionHandler',
+            new Handler\AirbrakeExceptionHandler($handler, $this->app)
+        );
     }
 
     protected function filterEnvKey(&$notice, $envKey)
