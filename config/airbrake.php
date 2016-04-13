@@ -6,10 +6,8 @@ return [
     'enabled' => env('AIRBRAKE_ENABLED', false),
 
     // API Key
-    'api_key' => env('AIRBRAKE_API_KEY', ''),
-    //'id'  => '',
-
-    //'key' => '',
+    'id'  => env('AIRBRAKE_PROJECT_ID', ''),
+    'key' => env('AIRBRAKE_API_KEY', ''),
 
     // Connection to the airbrake server
     'host'      => 'api.airbrake.io',

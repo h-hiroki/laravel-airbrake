@@ -28,8 +28,8 @@ class AirbrakeServiceProvider extends ServiceProvider
     {
         $this->app->singleton('Airbrake\Notifier', function ($app) {
             $airbrake = new Notifier([
-                //'projectId'  => config('airbrake.id'),
-                'projectKey' => config('airbrake.api_key'),
+                'projectId'  => config('airbrake.id'),
+                'projectKey' => config('airbrake.key'),
 
                 'host' => config('airbrake.connection.host', null),
             ]);
