@@ -1,7 +1,6 @@
 <?php
 
 return [
-    
     // Globally enable airbrake
     'enabled' => env('AIRBRAKE_ENABLED', false),
 

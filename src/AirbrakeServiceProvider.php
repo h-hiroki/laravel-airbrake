@@ -15,7 +15,7 @@ class AirbrakeServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/airbrake.php' => config_path('airbrake.php'),
+            __DIR__.'/../config/airbrake.php' => config_path('airbrake.php'),
         ]);
     }
 
@@ -63,7 +63,7 @@ class AirbrakeServiceProvider extends ServiceProvider
 
     protected function getEnvFile()
     {
-        $filePath = $this->app->environmentPath() . '/' . $this->app->environmentFile();
+        $filePath = $this->app->environmentPath().'/'.$this->app->environmentFile();
 
         $envFile = @file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 

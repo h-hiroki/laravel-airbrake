@@ -6,8 +6,8 @@ use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Foundation\Application;
 
-class AirbrakeExceptionHandler implements ExceptionHandler {
-
+class AirbrakeExceptionHandler implements ExceptionHandler
+{
     /**
      * @var
      */
@@ -27,14 +27,13 @@ class AirbrakeExceptionHandler implements ExceptionHandler {
     /**
      * Report or log an exception.
      *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
+     * @param \Exception $e
      *
-     * @param  \Exception  $e
      * @return void
      */
     public function report(Exception $e)
     {
-        if($this->handler->shouldReport($e)) {
+        if ($this->handler->shouldReport($e)) {
             $this->app['Airbrake\Instance']->notify($e);
         }
 
@@ -44,8 +43,9 @@ class AirbrakeExceptionHandler implements ExceptionHandler {
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Exception $e
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @param \Exception                                        $e
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function render($request, Exception $e)
@@ -56,8 +56,9 @@ class AirbrakeExceptionHandler implements ExceptionHandler {
     /**
      * Render an exception to the console.
      *
-     * @param  \Symfony\Component\Console\Output\OutputInterface $output
-     * @param  \Exception $e
+     * @param \Symfony\Component\Console\Output\OutputInterface $output
+     * @param \Exception                                        $e
+     *
      * @return void
      */
     public function renderForConsole($output, Exception $e)
