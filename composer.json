@@ -1,0 +1,24 @@
+{
+    "name": "adamtester/laravel-airbrake",
+    "description": "Laravel service provider for Airbrake https://github.com/airbrake/phpbrake",
+    "keywords": ["airbrake", "laravel"],
+    "require": {
+        "php": ">=5.4",
+        "airbrake/phpbrake": "^0.1.1",
+        "illuminate/support": "5.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Tester",
+            "email": "adam.tester@vevvu.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "adamtester\\laravelairbrake\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
