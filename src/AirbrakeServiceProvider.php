@@ -26,7 +26,7 @@ class AirbrakeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('Airbrake\Notifier', function ($app) {
+        $this->app->singleton('Airbrake\Instance', function ($app) {
             $airbrake = new Notifier([
                 'projectId'  => config('airbrake.id'),
                 'projectKey' => config('airbrake.key'),
