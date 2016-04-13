@@ -31,7 +31,7 @@ class AirbrakeServiceProvider extends ServiceProvider
                 'projectId'  => config('airbrake.id'),
                 'projectKey' => config('airbrake.key'),
 
-                'host' => config('airbrake.connection.host', null),
+                'host' => config('airbrake.host'),
             ]);
 
             $airbrake->addFilter(function ($notice) {
