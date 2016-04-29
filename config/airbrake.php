@@ -3,12 +3,12 @@
 return [
     // Globally enable airbrake
     'enabled' => env('AIRBRAKE_ENABLED', false),
-    
+
     // Environments to ignore errors
     'ignore_environments' => [
-    	'local',
-    	'testing',
-    	'development'
+        'local',
+        'testing',
+        'development'
     ],
 
     // API Key
