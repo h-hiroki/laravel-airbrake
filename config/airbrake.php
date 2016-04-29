@@ -8,7 +8,7 @@ return [
     'ignore_environments' => [
         'local',
         'testing',
-        'development'
+        'development',
     ],
 
     // API Key
