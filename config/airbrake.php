@@ -16,5 +16,5 @@ return [
     'key' => env('AIRBRAKE_API_KEY', ''),
 
     // Connection to the airbrake server
-    'host' => 'api.airbrake.io',
+    'host' => env('AIRBRAKE_PROJECT_ID', 'api.airbrake.io'),
 ];
