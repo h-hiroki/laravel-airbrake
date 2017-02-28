@@ -11,6 +11,9 @@ return [
         'development',
     ],
 
+    // Exceptions to ignore errors
+    'ignore_exceptions' => [],
+
     // API Key
     'id'  => env('AIRBRAKE_PROJECT_ID', ''),
     'key' => env('AIRBRAKE_API_KEY', ''),

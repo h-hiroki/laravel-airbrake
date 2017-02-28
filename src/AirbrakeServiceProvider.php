@@ -41,6 +41,11 @@ class AirbrakeServiceProvider extends ServiceProvider
                     $this->filterEnvKey($notice, $envKey);
                 }
 
+                if (in_array($notice['errors'][0]['type'], config('airbrake.ignore_exceptions'))) {
+                    // Ignore this exception.
+                    return null;
+                }
+
                 return $notice;
             });
 
