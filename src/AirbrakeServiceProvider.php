@@ -26,6 +26,11 @@ class AirbrakeServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // check enable
+        if (!config('airbrake.enabled')) {
+            return;
+        }
+
         $this->app->singleton('Airbrake\Instance', function ($app) {
             $airbrake = new Notifier([
                 'projectId'  => config('airbrake.id'),
