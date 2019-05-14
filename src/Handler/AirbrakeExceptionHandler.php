@@ -65,4 +65,16 @@ class AirbrakeExceptionHandler implements ExceptionHandler
     {
         return $this->handler->renderForConsole($output, $e);
     }
+
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Exception  $e
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function shouldReport(Exception $e)
+    {
+        return true;
+    }
 }
