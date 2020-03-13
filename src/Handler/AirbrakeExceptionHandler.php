@@ -34,12 +34,14 @@ class AirbrakeExceptionHandler implements ExceptionHandler
     public function report(Exception $e)
     {
         if (is_array(config('airbrake.ignore_environments')) && !in_array(app()->environment(), config('airbrake.ignore_environments')) && $this->handler->shouldReport($e)) {
-
             if (!isset(config('airbrake.exception_rooting')[get_class($e)])) {
                 $this->app['Airbrake\Instance']->notify($e);
             }
 
             foreach (config('airbrake.exception_rooting') as $exception_class => $config) {
+                if ($exception_class != get_class($e)) {
+                    continue;
+                }
                 // Create new Notifier instance.
                 $notifier = new \Airbrake\Notifier([
                     'host' => $config['host'],
